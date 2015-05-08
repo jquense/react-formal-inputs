@@ -1,4 +1,4 @@
-a react-widgets adaptor for react-formal
+a react-widgets adapter for react-formal
 
 ```
   var Form = require('react-formal')
