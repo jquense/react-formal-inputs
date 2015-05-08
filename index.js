@@ -22,7 +22,7 @@ types.date           =
   types.datepicker   = wrapWithDefaults(widgets.DateTimePicker, { time: false })
 
 types.time           =
-  types.timepicker   = wrapWithDefaults(widgets.DateTimePicker, { date: false })
+  types.timepicker   = wrapWithDefaults(widgets.DateTimePicker, { calendar: false })
 
 types.datetime =
 types['datetime-local'] = 
