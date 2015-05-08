@@ -2,18 +2,12 @@ var React = require('react')
   , widgets = require('react-widgets');
 
 function wrapWithDefaults(Component, defaults){
-  function WrappedWithDefaults(props) {
-    return { 
-      props: props,
-      render: function(){
-        return React.createElement(Component, this.props)
-      }
+  return React.createClass({
+    getDefaultProps: function(){ return defaults },
+    render: function(){
+      return React.createElement(Component, this.props)
     }
-  }
-
-  WrappedWithDefaults.defaultProps = defaults
-
-  return WrappedWithDefaults
+  })
 }
 
 var types = Object.create(null);
