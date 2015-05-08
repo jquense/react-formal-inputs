@@ -1,43 +1,43 @@
-let React = require('react')
-  , { 
-    Combobox
-  , DropdownList
-  , NumberPicker
-  , Calendar
-  , DateTimePicker
-  , Multiselect
-  , SelectList } = require('react-widgets')
+var React = require('react')
+  , widgets = require('react-widgets');
 
-let wrapWithDefaults = 
-  (Component, defaults) => props => ({
-    props,
-    render() {
-      return React.createElement(Component, {...defaults, ...this.props})
+function wrapWithDefaults(Component, defaults){
+  function WrappedWithDefaults(props) {
+    return { 
+      props: props,
+      render: function(){
+        return React.createElement(Component, this.props)
+      }
     }
-  })
+  }
 
-let types = Object.create(null);
+  WrappedWithDefaults.defaultProps = defaults
+
+  return WrappedWithDefaults
+}
+
+var types = Object.create(null);
 
 
-types.combobox       = Combobox
-types.dropdownlist   = DropdownList
-types.calendar       = Calendar
-types.selectlist     = SelectList
+types.combobox       = widgets.Combobox
+types.dropdownlist   = widgets.DropdownList
+types.calendar       = widgets.Calendar
+types.selectlist     = widgets.SelectList
 
 types.date           =
-  types.datepicker   = wrapWithDefaults(DateTimePicker, { time: false })
+  types.datepicker   = wrapWithDefaults(widgets.DateTimePicker, { time: false })
 
 types.time           =
-  types.timepicker   = wrapWithDefaults(DateTimePicker, { date: false })
+  types.timepicker   = wrapWithDefaults(widgets.DateTimePicker, { date: false })
 
-type.datetime =
+types.datetime =
 types['datetime-local'] = 
-  types.datetimepicker  = DateTimePicker
+  types.datetimepicker  = widgets.DateTimePicker
 
 types.number         = 
-  types.numberpicker = NumberPicker
+  types.numberpicker = widgets.NumberPicker
 
 types.array          =
-  types.multiselect  = Multiselect
+  types.multiselect  = widgets.Multiselect
 
 module.exports = types
