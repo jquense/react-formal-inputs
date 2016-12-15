@@ -5,7 +5,11 @@ function wrapWithDefaults(Component, defaults){
   return React.createClass({
     getDefaultProps: function(){ return defaults },
     render: function(){
-      return React.createElement(Component, this.props)
+      let props = Object.assign({}, this.props);
+
+      delete props.meta;
+
+      return React.createElement(Component, props)
     }
   })
 }
