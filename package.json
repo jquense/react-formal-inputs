@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jquense/react-formal-widgets"
+    "url": "https://github.com/jquense/react-formal-inputs"
   },
   "author": "jquense @monasticpanic",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jquense/react-formal-widgets/issues"
+    "url": "https://github.com/jquense/react-formal-inputs/issues"
   },
-  "homepage": "https://github.com/jquense/react-formal-widgets",
+  "homepage": "https://github.com/jquense/react-formal-inputs",
 
   "peerDependencies": {
     "react": ">=0.11.0",
