@@ -2,7 +2,7 @@ let React = require('react')
   , widgets = require('react-widgets');
 
 function createInput(Component, defaults){
-  class FormInput extends React.Component {
+  return class FormInput extends React.Component {
     static defaultProps = defaults || {}
     render() {
       const { meta, ...props } = this.props;
