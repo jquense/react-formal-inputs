@@ -12,7 +12,9 @@ var React = require('react'),
     widgets = require('react-widgets');
 
 function createInput(Component, defaults) {
-  var FormInput = function (_React$Component) {
+  var _class, _temp;
+
+  return _temp = _class = function (_React$Component) {
     _inherits(FormInput, _React$Component);
 
     function FormInput() {
@@ -30,9 +32,7 @@ function createInput(Component, defaults) {
     };
 
     return FormInput;
-  }(React.Component);
-
-  FormInput.defaultProps = defaults || {};
+  }(React.Component), _class.defaultProps = defaults || {}, _temp;
 }
 
 var types = Object.create(null);
